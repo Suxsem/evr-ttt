@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>play - ttt</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        font-size: large;
+        font-family: sans-serif;
+		margin: 0;
+        max-width: 100%;
+      }
+      #play-area {
+		float: left;
+		width: 100%;
+		max-width: 500px;
+      }
+      #status, settings, #controls, #difficulty-settings, #about {
+        margin: 1em;
+      }
+	  #status {
+		clear: left;
+	  }
+	@media only screen and (max-width: 1000px) {
+	#qr {
+		display: none;
+	}
+	}
+    </style>
+  </head>
+  <body>
+    <div id="play-area">
+      <canvas id="board"></canvas>
+    </div>
+
+	<div id="qr">
+		<img src="qrcode.png">
+	</div>
+	
+	<br>
+
+	<div id="status"
+	  data-empty="&nbsp;"
+	  data-winner-x="X wins!"
+	  data-winner-o="O wins!"
+	  data-tie="Cat's game"
+	  data-paused="AI paused"
+	  data-thinking="Thinking..."
+	>&nbsp;</div>
+	
+    <div id="settings">
+	  <div id="difficulty-settings">
+        Difficulty:
+        <select id="difficulty-control">
+		  <option value="0" selected>Noob (no training)</option>
+          <option value="1">Easy (trained by 63452 games)</option>
+          <option value="2">Medium (trained by 375231 games)</option>
+		  <option value="3">Hard (trained by 1254871 games)</option>
+        </select>
+        <br>
+      </div>
+    </div>
+
+    <div id="controls">
+      <input id="pause" type="button" value="Pause AI"
+          data-paused="Resume AI" data-unpaused="Pause AI">
+      <input id="step" type="button" value="Step AI">
+      <input id="undo" type="button" value="Undo">
+      <input id="restart" type="button" value="Restart">
+    </div>
+	
+	<div id="about">
+	  <h4>Links</h4>
+      <ul>
+        <li><a href="index.html">Learn</a></li>
+      </ul>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
+    <script src="src/ttt.js"></script>
+    <script src="src/neural.js"></script>
+    <script src="src/ai.js"></script>
+    <script src="src/genetic.js"></script>
+    <script src="play.js"></script>
+  </body>
+</html>
