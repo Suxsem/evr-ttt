@@ -108,7 +108,7 @@ var Ttt = (function (Ttt) {
     // and lets us bend the rules if we want to.
     function Game(board, turn, history) {
         board = (typeof board === 'undefined' ? newBoard() : board);
-        turn = turn || (emptySquares(board).length % 2 === 0 ? O : X);
+        turn = turn || (Math.random() >= 0.5 ? O : X);
         history = history || [];
 
         this.board = board;

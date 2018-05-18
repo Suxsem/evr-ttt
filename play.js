@@ -121,13 +121,13 @@ $(function () {
         var ai = null;
 		if (turn === Ttt.X) {
 			switch ($difficultyControl.val()) {
-			case '0': ai = new Ai.Random(); break;
-			case '1': ai = new Ai.Smart(1); break;
-			case '2':
+			case '0': ai = new Ai.Random(); break;			
+			case '1':
 				var obj = $.parseJSON(thr);
 				var net = Neural.Net.import(obj);
 				ai = new Ai.Neural(net);
 				break;
+			case '2': ai = new Ai.Smart(1); break;
 			case '3': ai = new Ai.Smart(); break;
 			}
 		}
