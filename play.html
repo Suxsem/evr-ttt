@@ -11,7 +11,7 @@
 		margin: 0;
         max-width: 100%;
       }
-      #play-area {
+      #play-area, #infos {
 		float: left;
 		width: 100%;
 		max-width: 500px;
@@ -22,6 +22,10 @@
 	  #status {
 		clear: left;
 	  }
+	  #infos,#shorturl {
+		float: left;
+	  }
+
 	@media only screen and (max-width: 1000px) {
 	#qr {
 		display: none;
@@ -39,43 +43,50 @@
 	</div>
 	
 	<br>
-
-	<div id="status"
-	  data-empty="&nbsp;"
-	  data-winner-x="X wins!"
-	  data-winner-o="O wins!"
-	  data-tie="Cat's game"
-	  data-paused="AI paused"
-	  data-thinking="Thinking..."
-	>&nbsp;</div>
 	
-    <div id="settings">
-	  <div id="difficulty-settings">
-        Difficulty:
-        <select id="difficulty-control">
-		  <option value="0" selected>Noob (no training)</option>
-          <option value="1">Easy (trained by 63452 games)</option>
-          <option value="2">Medium (trained by 375231 games)</option>
-		  <option value="3">Hard (trained by 1254871 games)</option>
-        </select>
-        <br>
-      </div>
-    </div>
+	<div id="infos">
+		<div id="status"
+		  data-empty="&nbsp;"
+		  data-winner-x="X wins!"
+		  data-winner-o="O wins!"
+		  data-tie="Cat's game"
+		  data-paused="AI paused"
+		  data-thinking="Thinking..."
+		>&nbsp;</div>
+		
+		<div id="settings">
+		  <div id="difficulty-settings">
+			Difficulty:
+			<select id="difficulty-control">
+			  <option value="0" selected>Noob (no training)</option>
+			  <option value="1">Easy (trained by 63452 games)</option>
+			  <option value="2">Medium (trained by 375231 games)</option>
+			  <option value="3">Hard (trained by 1254871 games)</option>
+			</select>
+			<br>
+		  </div>
+		</div>
 
-    <div id="controls">
-      <input id="pause" type="button" value="Pause AI"
-          data-paused="Resume AI" data-unpaused="Pause AI">
-      <input id="step" type="button" value="Step AI">
-      <input id="undo" type="button" value="Undo">
-      <input id="restart" type="button" value="Restart">
-    </div>
-	
-	<div id="about">
-	  <h4>Links</h4>
-      <ul>
-        <li><a href="index.html">Learn</a></li>
-      </ul>
+		<div id="controls">
+		  <input id="pause" type="button" value="Pause AI"
+			  data-paused="Resume AI" data-unpaused="Pause AI">
+		  <input id="step" type="button" value="Step AI">
+		  <input id="undo" type="button" value="Undo">
+		  <input id="restart" type="button" value="Restart">
+		</div>
+		
+		<div id="about">
+		  <h4>Links</h4>
+		  <ul>
+			<li><a href="index.html">Learn</a></li>
+		  </ul>
+		</div>
 	</div>
+	
+	<div id="shorturl">
+	  <h1>@ bit.ly/evrttt</h1>
+	</div>
+
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
